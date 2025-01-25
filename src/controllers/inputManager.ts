@@ -20,11 +20,14 @@ export class InputManager {
   private initPointerInput() {
     this.scene.input.on('pointerdown', (pointer: Phaser.Input.Pointer) => {
       this.pointerDown = true;
+      console.log(pointer);
+
     });
 
     this.scene.input.on('pointermove', (pointer: Phaser.Input.Pointer) => {
       if (this.pointerDown) {
         console.log("Pointer down and swiping");
+        console.log(pointer);
 
       }
     });

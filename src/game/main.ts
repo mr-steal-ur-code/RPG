@@ -7,8 +7,8 @@ import { Boot } from './scenes/Boot';
 
 const config: Phaser.Types.Core.GameConfig = {
   type: AUTO,
-  width: 1000,
-  height: 1800,
+  width: 800,
+  height: 600,
   parent: 'game-container',
   fps: {
     limit: 120

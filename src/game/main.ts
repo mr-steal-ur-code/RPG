@@ -25,7 +25,7 @@ const config: Phaser.Types.Core.GameConfig = {
     arcade: {
       gravity: { x: 0, y: 0 },
       overlapBias: 20,
-      debug: true,
+      debug: false,
     },
   },
   backgroundColor: '#028af8',

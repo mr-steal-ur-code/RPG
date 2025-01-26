@@ -9,7 +9,7 @@ export class CharacterManager {
   constructor() { }
 
   static spawnCharacter(scene: Phaser.Scene, x: number, y: number) {
-    this.character = scene.physics.add.sprite(x, y, "character").setCircle(16, -5, 0).setDepth(200);
+    this.character = scene.physics.add.sprite(x, y, "character").setCircle(12, 0, 5).setDepth(200);
     scene.cameras.main.startFollow(this.character);
     this.inputManager = new InputManager(scene);
     AnimationManager.moveAnimationUp(scene);

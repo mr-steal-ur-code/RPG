@@ -15,7 +15,7 @@ export class MainMenu extends Scene {
 
     this.logo = this.add.image(centerX, 100, 'logo').setDepth(100);
 
-    this.add.text(centerX, centerY, "CJ's RPG", {
+    this.add.text(centerX, centerY, "Realm Builder", {
       fontSize: 70,
       strokeThickness: 10,
       stroke: "#000",

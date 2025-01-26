@@ -15,9 +15,11 @@ export class Game extends Phaser.Scene {
   }
 
   create() {
+    this.camera = this.cameras.main;
+    this.add.image(0, 0, "background").setOrigin(0, 0).setDisplaySize(1280, 720);
+    this.camera.setBounds(0, 0, 1280, 720);
     this.inputManager = new InputManager(this);
     this.characterManager = new CharacterManager();
-    this.camera = this.cameras.main;
     const { centerX, centerY } = this.camera;
     CharacterManager.spawnCharacter(this, centerX, centerY);
 

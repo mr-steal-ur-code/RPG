@@ -10,6 +10,7 @@ export class CharacterManager {
 
   static spawnCharacter(scene: Phaser.Scene, x: number, y: number) {
     this.character = scene.physics.add.sprite(x, y, "character");
+    scene.cameras.main.startFollow(this.character);
     this.inputManager = new InputManager(scene);
     AnimationManager.moveAnimationUp(scene);
     AnimationManager.moveAnimationRight(scene);
@@ -65,8 +66,8 @@ export class CharacterManager {
     }
 
     // Clamp the character within the bounds of the game
-    this.character.x = Phaser.Math.Clamp(this.character.x, 0, scene.cameras.main.width);
-    this.character.y = Phaser.Math.Clamp(this.character.y, 0, scene.cameras.main.height);
+    this.character.x = Phaser.Math.Clamp(this.character.x, 10, 1270);
+    this.character.y = Phaser.Math.Clamp(this.character.y, 10, 710);
   }
 
 }

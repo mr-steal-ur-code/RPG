@@ -9,7 +9,7 @@ export class CharacterManager {
   constructor() { }
 
   static spawnCharacter(scene: Phaser.Scene, x: number, y: number) {
-    this.character = scene.physics.add.sprite(x, y, "character");
+    this.character = scene.physics.add.sprite(x, y, "character").setCircle(16, -5, 0).setDepth(200);
     scene.cameras.main.startFollow(this.character);
     this.inputManager = new InputManager(scene);
     AnimationManager.moveAnimationUp(scene);
@@ -52,6 +52,7 @@ export class CharacterManager {
     const pressedKey = movementPriority.find((key) => this.inputManager.isKeyPressed(key));
 
     if (pressedKey) {
+      this.character.emit('move');
       const { dx, dy, animation, direction } = movementMap[pressedKey];
       this.character.x += dx;
       this.character.y += dy;
@@ -69,5 +70,4 @@ export class CharacterManager {
     this.character.x = Phaser.Math.Clamp(this.character.x, 10, 1270);
     this.character.y = Phaser.Math.Clamp(this.character.y, 10, 710);
   }
-
 }

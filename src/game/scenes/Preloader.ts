@@ -34,10 +34,13 @@ export class Preloader extends Scene {
 
     this.load.setPath('assets/sprites');
     this.load.image('logo', 'logo.png');
+    this.load.spritesheet('tree', 'medieval.png', {
+      frameWidth: 195,
+      frameHeight: 201,
+    });
     this.load.spritesheet('character', 'character.png', {
       frameWidth: 24,
       frameHeight: 32,
-
     });
   }
 
